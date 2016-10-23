@@ -64,7 +64,7 @@ public class EqualsAndHashCode {
         for (Person person : persons) {
             System.out.println(person.getName());
         }
-        assertThat(persons).hasSize(3);
+        assertThat(persons).hasSize(2);
     }
 
     @AllArgsConstructor
@@ -127,7 +127,7 @@ public class EqualsAndHashCode {
         // but we will not find it in map
         //Assertions.assertThat(birthdays).containsKey(date20160615);
 
-        birthdays.put(date20160615, new Person("Spark"));
+        birthdays.put(date20160615, new Person("Key"));
         assertThat(birthdays).containsKey(date20160615);
         assertThat(birthdays).hasSize(2);
         System.out.println(birthdays);

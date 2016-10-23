@@ -70,7 +70,9 @@ public class BasicsMethodReferencesTest {
 
         Supplier<Integer> year = now::getYear;
 
-        assertThat(year.get()).isGreaterThanOrEqualTo(2016);
+        assertThat(year.get())
+                .isEqualTo(now.getYear())
+                .isGreaterThanOrEqualTo(2016);
     }
 
     @Test
@@ -79,7 +81,8 @@ public class BasicsMethodReferencesTest {
 
         Function<LocalDate, Integer> year = LocalDate::getYear;
 
-        assertThat(year.apply(now)).isGreaterThanOrEqualTo(2016);
+        assertThat(year.apply(now))
+                .isGreaterThanOrEqualTo(2016);
     }
 
     @Test

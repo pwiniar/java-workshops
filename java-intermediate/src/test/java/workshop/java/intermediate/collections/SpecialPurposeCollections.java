@@ -1,5 +1,6 @@
 package workshop.java.intermediate.collections;
 
+import org.assertj.core.api.Assertions;
 import org.junit.Test;
 import workshop.java.intermediate.boilerplatefree.Movie;
 
@@ -54,23 +55,35 @@ public class SpecialPurposeCollections {
     // object identity semantic, even for value objects
     @Test
     public void identityMap() throws Exception {
-        IdentityHashMap<String, String> identityMap = new IdentityHashMap<>();
+        IdentityHashMap<Object, String> identityMap = new IdentityHashMap<>();
 
-        identityMap.put("Java", "");
-        identityMap.put("Java", "");
-
-        assertThat(identityMap).hasSize(1);
-
+        identityMap.put(new String("Java"), "");
         identityMap.put(new String("Java"), "");
 
         assertThat(identityMap).hasSize(2);
+
+        identityMap.put("Java", "");
+        identityMap.put("Java", "");
+        identityMap.put("Java", "");
+        identityMap.put("Java", "");
+        identityMap.put("Java", "");
+
+        assertThat(identityMap).hasSize(3);
     }
 
     // if key is not referenced
     // intended for use with key objects with memory identity semantic of equality
-    // will not work properly for value objects
+    // will not work properly for value object keys like Strings
     @Test
     public void weakMap() throws Exception {
-        WeakHashMap<String, Movie> weakMap = new WeakHashMap<>();
+        WeakHashMap<Object, String> weakMap = new WeakHashMap<>();
+        weakMap.put(new Object(), "");
+
+        while (!weakMap.isEmpty()) {
+            System.gc(); // pure evil
+        }
+
+        Assertions.assertThat(weakMap)
+                .isEmpty();
     }
 }

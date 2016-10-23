@@ -16,7 +16,7 @@ public class Bench {
             .collect(Collectors.toList())
     );
 
-    @Benchmark
+    @Benchmark // JMH benchmark
     public void arrayList() throws Exception {
         ArrayList<String> list = new ArrayList<>(0);
         for (String s : base) {

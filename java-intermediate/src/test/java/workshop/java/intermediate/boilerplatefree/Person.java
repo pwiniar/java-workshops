@@ -1,10 +1,16 @@
 package workshop.java.intermediate.boilerplatefree;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Value;
+
 import java.util.Optional;
 
 /**
  * Created by michal on 21.10.2016.
  */
+@Value
+@AllArgsConstructor
 public class Person {
 
     private final String name;
@@ -12,16 +18,7 @@ public class Person {
 
     public Person(String name) {
         this.name = name;
-        this.involvement = null;
-    }
-
-    public Person(String name, String involvement) {
-        this.name = name;
-        this.involvement = involvement;
-    }
-
-    public String getName() {
-        return name;
+        involvement = null;
     }
 
     public Optional<String> getInvolvement() {

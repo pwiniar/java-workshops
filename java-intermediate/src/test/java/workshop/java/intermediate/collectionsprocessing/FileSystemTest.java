@@ -41,8 +41,12 @@ public class FileSystemTest {
 
     @Test
     public void readLines() throws Exception {
-        try (Stream<String> stream = Files.lines(Paths.get(
-                "src/test/java/workshop/java/advanced/almostlikefunctional/$EntryTest.java"))) {
+        try (Stream<String> stream = Files.lines(
+                Paths.get(
+                        "src/test/java",
+                        "workshop/java/intermediate",
+                        "almostlikefunctional/$EntryTest.java")
+        )) {
             stream
                     .filter(line -> line.contains("//"))
                     .map(String::trim)

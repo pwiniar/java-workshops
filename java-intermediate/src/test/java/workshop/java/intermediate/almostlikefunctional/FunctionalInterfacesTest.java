@@ -11,7 +11,7 @@ public class FunctionalInterfacesTest {
 
     @Test
     public void javaUtilFunctional() throws Exception {
-        Supplier<String> supplier = () -> "Hi!";
+        Supplier<Boolean> supplier = () -> Boolean.FALSE;
         Predicate<String> predicate = (String s) -> false;
         Consumer<String> consumer = (String o) -> {};
         Function<String, String> function = (String val) -> val + "!";

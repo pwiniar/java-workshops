@@ -3,6 +3,7 @@ package workshop.java.intermediate.almostlikefunctional;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
+import java.io.FilenameFilter;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -63,7 +64,8 @@ public class BasicsLambdaTest {
 
         Arrays.sort(arr, insensitive);
 
-        Assertions.assertThat(arr).containsExactly("apple", "Orange", "strawberry");
+        Assertions.assertThat(arr)
+                .containsExactly("apple", "Orange", "strawberry");
     }
 
     // use constant String.CASE_INSENSITIVE_ORDER instead defining own comparator

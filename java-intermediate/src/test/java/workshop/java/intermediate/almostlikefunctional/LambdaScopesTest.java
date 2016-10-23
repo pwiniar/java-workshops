@@ -35,7 +35,7 @@ public class LambdaScopesTest {
 
     @Test
     public void localVariableInScope() throws Exception {
-        final LocalDate now = LocalDate.now();
+        LocalDate now = LocalDate.now();
         Supplier<Integer> year = () -> now.getYear();
 
         assertThat(year.get())
@@ -82,6 +82,7 @@ public class LambdaScopesTest {
                 .isEqualTo(now.getYear());
 
         now = LocalDate.of(2015, Month.DECEMBER, 24);
+        //today = LocalDate.of(2015, Month.DECEMBER, 24);
 
         assertThat(year.get())
                 .isEqualTo(2016);

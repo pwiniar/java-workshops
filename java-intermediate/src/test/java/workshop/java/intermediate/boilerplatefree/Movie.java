@@ -1,5 +1,9 @@
 package workshop.java.intermediate.boilerplatefree;
 
+import lombok.EqualsAndHashCode;
+import lombok.Value;
+import lombok.experimental.Builder;
+
 import java.net.URI;
 import java.time.Duration;
 import java.time.LocalDate;
@@ -10,6 +14,9 @@ import java.util.List;
 /**
  * Created by michal on 21.10.2016.
  */
+@Value
+@Builder
+@EqualsAndHashCode(of = "imdbID")
 public class Movie {
 
     private final String imdbID;
@@ -30,27 +37,6 @@ public class Movie {
     private final Double metascore;
     private final Double imdbRating;
     private final Double imdbVotes;
-
-    public Movie(String imdbID, String title, Year year, String rated, LocalDate released, Duration runtime, EnumSet<Genre> genre, List<Person> director, List<Person> writer, List<Person> actors, String plot, String language, String country, String awards, URI poster, Double metascore, Double imdbRating, Double imdbVotes) {
-        this.imdbID = imdbID;
-        this.title = title;
-        this.year = year;
-        this.rated = rated;
-        this.released = released;
-        this.runtime = runtime;
-        this.genre = genre;
-        this.director = director;
-        this.writer = writer;
-        this.actors = actors;
-        this.plot = plot;
-        this.language = language;
-        this.country = country;
-        this.awards = awards;
-        this.poster = poster;
-        this.metascore = metascore;
-        this.imdbRating = imdbRating;
-        this.imdbVotes = imdbVotes;
-    }
 
     public enum Genre {
         Action,
@@ -90,6 +76,6 @@ public class Movie {
         Westerns,
         Sports,
         Supernatural,
-        Thriller;
+        Thriller
     }
 }

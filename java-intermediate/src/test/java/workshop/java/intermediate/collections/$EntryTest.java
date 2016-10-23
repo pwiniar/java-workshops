@@ -1,14 +1,84 @@
 package workshop.java.intermediate.collections;
 
+import org.assertj.core.api.Assertions;
+import org.junit.Test;
+
+import java.util.*;
+import java.util.stream.Collectors;
+
+import static java.util.Collections.unmodifiableList;
+
 /**
  * Created by michal on 21.10.2016.
  */
 public class $EntryTest {
 
+    static final List<String> objects = unmodifiableList(
+            new Random()
+                    .doubles(10_000)
+                    .mapToObj(d -> "next double is: " + d)
+                    .collect(Collectors.toList())
+    );
+
     // Task 1.
     // add 10 000 random strings to:
     // to known list, set, queue implementation
     // create ExampleCollections class providing instances of filled and unmodifiable collections
+
+    @Test
+    public void arrayListAdd() throws Exception {
+        List<String> strings = new ArrayList<>();
+        for (String object : objects) {
+            strings.add(object);
+        }
+
+        Assertions.assertThat(strings)
+                .hasSize(10_000);
+    }
+
+    @Test
+    public void linkedListAdd() throws Exception {
+        List<String> strings = new LinkedList<>();
+        for (String object : objects) {
+            strings.add(object);
+        }
+
+        Assertions.assertThat(strings)
+                .hasSize(10_000);
+    }
+
+    @Test
+    public void hashSetAdd() throws Exception {
+        Set<String> strings = new HashSet<>();
+        for (String object : objects) {
+            strings.add(object);
+        }
+
+        Assertions.assertThat(strings)
+                .hasSize(10_000);
+    }
+
+    @Test
+    public void treeSetAdd() throws Exception {
+        Set<String> strings = new TreeSet<>();
+        for (String object : objects) {
+            strings.add(object);
+        }
+
+        Assertions.assertThat(strings)
+                .hasSize(10_000);
+    }
+
+    @Test
+    public void linkedHashSetAdd() throws Exception {
+        Set<String> strings = new LinkedHashSet<>();
+        for (String object : objects) {
+            strings.add(object);
+        }
+
+        Assertions.assertThat(strings)
+                .hasSize(10_000);
+    }
 
     // Task 2.
     // using example collections

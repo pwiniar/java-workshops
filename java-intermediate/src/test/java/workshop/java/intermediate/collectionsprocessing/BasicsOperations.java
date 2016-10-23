@@ -15,7 +15,7 @@ public class BasicsOperations {
     @Test
     public void justFun() throws Exception {
         List<String> myList =
-                Arrays.asList("b1", "a2", "c2", "a1", "c1");
+                Arrays.asList("b1", "a2", "c2", "a1", "c1", "a2");
 
         myList
                 .stream()
@@ -24,7 +24,7 @@ public class BasicsOperations {
                 .sorted()
                 .peek(System.out::println)
                 .skip(1)
-                .limit(10)
+                .limit(3)
                 .distinct()
                 .flatMapToInt(CharSequence::chars)
                 .peek(System.out::println)
