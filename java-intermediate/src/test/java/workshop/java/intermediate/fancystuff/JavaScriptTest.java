@@ -11,8 +11,9 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static workshop.java.intermediate.almostlikefunctional.$ExitTest.Try.tryIt;
+import static java.workshop.java.intermediate.almostlikefunctional.$ExitTest.Try.tryIt;
+import static org.assertj.core.api.Java6Assertions.assertThat;
+
 
 /**
  * Created by michal on 23.10.2016.

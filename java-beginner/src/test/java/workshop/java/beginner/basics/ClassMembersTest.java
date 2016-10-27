@@ -11,7 +11,7 @@ public class ClassMembersTest {
     @Test
     public void instantiateObject() throws Exception {
 
-        ClassMembers object = new ClassMembers();
+        workshop.java.beginner.basics.ClassMembers object = new ClassMembers();
 
         Assertions.assertThat(object).isNotNull();
     }
