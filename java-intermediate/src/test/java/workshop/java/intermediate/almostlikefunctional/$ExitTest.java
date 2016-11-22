@@ -1,4 +1,4 @@
-package java.workshop.java.intermediate.almostlikefunctional;
+package workshop.java.intermediate.almostlikefunctional;
 
 import org.assertj.core.api.Assertions;
 import org.junit.Test;

@@ -15,7 +15,7 @@ public class CompletableFutureBasicsTest {
 
     @Test
     public void runTask() throws Exception {
-        CompletableFuture<Void> future = CompletableFuture.runAsync(() -> sleep(Duration.ofSeconds(1)));
+        CompletableFuture<Void> future = CompletableFuture.runAsync(() -> sleep(Duration.ofSeconds(60)));
 
         assertThat(future).isNotDone();
         Void aVoid = future.get(); // waits till complete
