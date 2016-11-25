@@ -112,7 +112,7 @@ public class CompletableFutureBasicsTest {
         assertThat(future1).isDone();
         assertThat(future2).isNotDone();
         String response = future2.get(); // waits till complete
-        assertThat(response).isEqualTo("data for someID from database");
+        assertThat(response).isEqualTo("repository for someID from database");
         assertThat(future2).isDone();
     }
 
@@ -301,7 +301,7 @@ public class CompletableFutureBasicsTest {
     private CompletionStage<String> requestDataFromCloudForId(String dataId) {
         return CompletableFuture.supplyAsync( () -> {
             sleep(Duration.ofSeconds(1));
-            return "data for " + dataId;
+            return "repository for " + dataId;
         });
     }
 

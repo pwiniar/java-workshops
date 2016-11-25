@@ -57,12 +57,12 @@ public class DependenciesTest {
 
     @Test
     public void testDoBusinessStuffFromService() throws Exception {
-        Mockito.when(mockedDatabase.readData()).thenReturn("fake data");
+        Mockito.when(mockedDatabase.readData()).thenReturn("fake repository");
 
         serviceUnderTests.doBusinessStuff();
 
         Mockito.verify(mockedService).doYourJob(captor.capture());
 
-        Assertions.assertThat(captor.getValue()).isEqualTo("fake data to send");
+        Assertions.assertThat(captor.getValue()).isEqualTo("fake repository to send");
     }
 }

@@ -1,7 +1,8 @@
 package com.pluralsight.spring.framework.xml;
 
 import com.pluralsight.spring.framework.xml.service.CustomerService;
-import com.pluralsight.spring.framework.xml.service.HardcodedCustomerService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Created by Pawel on 2016-11-22.
@@ -10,8 +11,23 @@ public class Application {
 
     public static void main(String[] args) {
 
-        CustomerService service = new HardcodedCustomerService();
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+//
+//        CustomerService service = applicationContext.getBean("customerServiceSetterInjection", CustomerService.class);
+//
+//        printResult(service);
+//
+//        CustomerService service1 = applicationContext.getBean("customerServiceConstructIndjection", CustomerService.class);
+//
+//        printResult(service1);
 
+        CustomerService service2 = applicationContext.getBean("customerServiceAutowire1", CustomerService.class);
+
+        printResult(service2);
+
+    }
+
+    private static void printResult(CustomerService service) {
         service.findAll().stream()
                 .map(s -> {
                     //map for transformation purposes
@@ -22,11 +38,8 @@ public class Application {
                     return s;
                 })
                 .forEach(s -> {
-                    System.out.format("Hi Customer %s %s",
+                    System.out.format("Hi Customer %s %s\n",
                             s.getFirstName(), s.getLastName());
                 });
-
-
     }
-
 }

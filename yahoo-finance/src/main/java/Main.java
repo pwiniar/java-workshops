@@ -158,7 +158,7 @@ public class Main {
 
     private static void runPostSocket() {
         try {
-            // Create POST data string
+            // Create POST repository string
             String postdata = "appid" + "=" + URLEncoder.encode("YahooDemo", "UTF-8");
             postdata += "&" + "query" + "=" + URLEncoder.encode("umbrella", "UTF-8");
             postdata += "&" + "results" + "=" + URLEncoder.encode("10", "UTF-8");
@@ -177,7 +177,7 @@ public class Main {
             bw.write("Content-Type: application/x-www-form-urlencoded\r\n");
             bw.write("\r\n");
 
-            // Send POST data string
+            // Send POST repository string
             bw.write(postdata);
             bw.flush();
 

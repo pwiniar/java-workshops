@@ -13,6 +13,8 @@
         <module>java-beginner</module>
         <module>java-intermediate</module>
         <module>spring-sample</module>
+        <module>car-intersection-manager</module>
+        <module>currency-calculator</module>
     </modules>
 
     <dependencies>

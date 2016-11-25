@@ -14,7 +14,7 @@ public class OrderRepository {
     TaxCalculator defaultCalculator = new TaxCalculatorForPL();
 
     public Order forId(String id) {
-        // data read from database for given id
+        // repository read from database for given id
         String country = "PL";
         String sum = "123.00";
         TaxCalculator calculator = calculators.getOrDefault(country, defaultCalculator);

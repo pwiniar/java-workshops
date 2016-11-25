@@ -2,7 +2,6 @@ package com.pluralsight.spring.framework.xml.service;
 
 import com.pluralsight.spring.framework.xml.model.Customer;
 import com.pluralsight.spring.framework.xml.repository.CustomerRepository;
-import com.pluralsight.spring.framework.xml.repository.HibernateCustomerRepository;
 
 import java.util.List;
 
@@ -11,10 +10,21 @@ import java.util.List;
  */
 public class HardcodedCustomerService implements CustomerService {
 
-    private CustomerRepository customerRepository =  new HibernateCustomerRepository();
+    private CustomerRepository customerRepository;
+
+//    public HardcodedCustomerService() {
+//
+//    }
+
+    public HardcodedCustomerService(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
 
     public List<Customer> findAll() {
         return customerRepository.findAll();
     }
 
+//    public void setCustomerRepository(CustomerRepository customerRepository) {
+//        this.customerRepository = customerRepository;
+//    }
 }
