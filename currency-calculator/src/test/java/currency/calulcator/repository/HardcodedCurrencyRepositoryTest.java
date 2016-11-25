@@ -1,5 +1,6 @@
 package currency.calulcator.repository;
 
+import currency.calulcator.repository.hardcoded.HardcodedCurrencyRepository;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -14,11 +15,11 @@ public class HardcodedCurrencyRepositoryTest {
 
     @Test
     public void whenEURCurrencyIsUsedThenFloatValueWillBeReturned() throws Exception {
-        Assert.assertEquals(hardcodedCurrencyRepository.getCurrency(CurrencyRepository.Currency.PLNUSD, new Date()), 1.0f, 0);
+        Assert.assertEquals(String.valueOf(hardcodedCurrencyRepository.getCurrency(CurrencyRepository.Currency.PLN, new Date())), 1.0f, 0);
     }
 
     @Test
     public void whenUSDCurrencyIsUsedThenFloatValueWillBeReturned() throws Exception {
-        Assert.assertEquals(hardcodedCurrencyRepository.getCurrency(CurrencyRepository.Currency.USDEUR, new Date()), 5.0f, 0);
+        Assert.assertEquals(String.valueOf(hardcodedCurrencyRepository.getCurrency(CurrencyRepository.Currency.USD, new Date())), 5.0f, 0);
     }
 }
