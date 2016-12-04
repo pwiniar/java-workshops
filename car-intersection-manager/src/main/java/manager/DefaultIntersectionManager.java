@@ -14,7 +14,7 @@ public class DefaultIntersectionManager implements IntersectionManager {
     public void manage(Intersection intersection) {
         while (true) {
             if (Road.Light.GREEN.equals(light)) {
-                System.out.println("Green light for left road");
+                System.out.println("Green light for left road, number of cars waiting: " + intersection.getCarLeftRoad().carsWaitingSize());
                 for (int i = 0; i < intersection.getCarLeftRoad().carsWaitingSize(); i++) {
                     System.out.println("Going car:" + i);
                     intersection.getCarLeftRoad().getCars().remove(i);
@@ -22,7 +22,7 @@ public class DefaultIntersectionManager implements IntersectionManager {
                 }
                 System.out.println(intersection.getCarLeftRoad().getCars().size());
             } else {
-                System.out.println("Green light for right road");
+                System.out.println("Green light for right road, number of cars waiting: " + intersection.getCarRightRoad().carsWaitingSize());
                 for (int i = 0; i < intersection.getCarRightRoad().carsWaitingSize(); i++) {
                     System.out.println("Going car:" + i);
                     intersection.getCarRightRoad().getCars().remove(i);

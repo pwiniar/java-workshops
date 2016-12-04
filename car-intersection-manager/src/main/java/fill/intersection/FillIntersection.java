@@ -16,7 +16,7 @@ public class FillIntersection extends Thread {
 
     @Override
     public void run() {
-        for (int i = 0; i < 50; i++) {
+        for (int i = 0; i < 15; i++) {
             integers.add(i);
 //                System.out.println(String.format("Thread: %s adding car: %s", getName(), i));
         }

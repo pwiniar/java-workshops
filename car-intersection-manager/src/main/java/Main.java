@@ -23,7 +23,7 @@ public class Main {
         FillIntersection fillIntersectionRight = new FillIntersection(rightInt);
         fillIntersectionRight.start();
 
-sleeper(5000);
+        sleeper(5000);
 
         CarLeftRoad carLeftRoad = new CarLeftRoad();
         carLeftRoad.setCars(leftInt);
@@ -35,6 +35,10 @@ sleeper(5000);
 
         intersection.manage();
         intersection.changeLight();
+
+        sleeper(10000);
+
+        intersection.manage();
     }
 
     private static void sleeper(int milis) {
