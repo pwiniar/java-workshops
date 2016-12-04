@@ -69,5 +69,11 @@
             <version>1.7</version>
             <optional>true</optional>
         </dependency>
+        <dependency>
+            <groupId>jboss</groupId>
+            <artifactId>jboss-j2ee</artifactId>
+            <version>RELEASE</version>
+        </dependency>
+
     </dependencies>
 </project>

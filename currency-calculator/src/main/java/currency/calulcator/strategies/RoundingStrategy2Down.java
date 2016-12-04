@@ -9,8 +9,14 @@ public class RoundingStrategy2Down implements RoundingStrategy {
 
     @Override
     public int round(BigDecimal value) {
-        return 0;
+
+
+        DecimalFormat decimalFormat = RoundingStrategy.decimalFormat;
+
+
+        return value.;
     }
+
 
 //    zawsze w górę do dwóch miejsc po przecinku (domyślna)
 //    zawsze w dół do dwóch miejsc po przecinku

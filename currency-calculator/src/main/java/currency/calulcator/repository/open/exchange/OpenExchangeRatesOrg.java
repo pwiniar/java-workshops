@@ -56,7 +56,6 @@ public class OpenExchangeRatesOrg implements CurrencyRepository {
 
         String historical = String.format(HISTORICAL, year, month, day, appId);
         return updateExchangeRates(historical);
-
     }
 
     public BigDecimal currency(String currency) throws UnavailableExchangeRateException {
