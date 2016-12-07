@@ -1,0 +1,6 @@
+search value - any four-character sequence which consists of a pair of two different characters ex:abba
+
+valid - abba[mnop]qrst looking value before brackets
+valid - ioxxoj[asdfgh]zxcvbn looking value is outside square brackets, even though it's within a larger string
+invalid - abcd[bddb]xyyx looking value is within square brackets, even though xyyx is outside square brackets
+invalid - aaaa[qwer]tyui looking value is invalid
