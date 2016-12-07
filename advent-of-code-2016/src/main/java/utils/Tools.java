@@ -1,5 +1,8 @@
 package utils;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystems;
@@ -11,7 +14,7 @@ import java.util.stream.Stream;
  */
 public class Tools {
 
-    public static Stream<String> readFile(String path) {
+    public static Stream<String> readFileAsStream(String path) {
         Stream<String> lines = null;
         try {
             lines = Files.lines(FileSystems.getDefault().getPath(path), StandardCharsets.UTF_8);
@@ -19,5 +22,16 @@ public class Tools {
             e.printStackTrace();
         }
         return lines;
+    }
+
+    public static BufferedReader readFileAsBuffer(String path) {
+        BufferedReader br = null;
+        try {
+            br = new BufferedReader(new FileReader(path));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
+        return br;
     }
 }
