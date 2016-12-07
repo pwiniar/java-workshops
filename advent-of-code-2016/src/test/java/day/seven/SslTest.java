@@ -15,7 +15,7 @@ public class SslTest {
     private Analyzer classUnderTests = new Ssl();
 
     @Test
-    public void testWhenValidPatternIsBeforeSquareBrackets() throws Exception {
+    public void testOutsideSquareBracketsWithCorrespondingBabWithinSquareBrackets() throws Exception {
         String path = new File(getClass().getClassLoader().getResource("day.seven/test-input-1-valid-ssl").getFile()).getPath();
 
         int analyze = classUnderTests.analyze(path);
@@ -23,7 +23,7 @@ public class SslTest {
     }
 
     @Test
-    public void testWhenValueIsOutsideSquareBracketsWithinLargerString() throws Exception {
+    public void testWithinLongStringCorrectValueAndInsideSquareBrackets() throws Exception {
         String path = new File(getClass().getClassLoader().getResource("day.seven/test-input-2-valid-ssl").getFile()).getPath();
 
         int analyze = classUnderTests.analyze(path);
@@ -31,7 +31,7 @@ public class SslTest {
     }
 
     @Test
-    public void testWhenValueIsWithinSquareBrackets() throws Exception {
+    public void testEkeInSupernetWithCorrespondingKekInHypernet() throws Exception {
         String path = new File(getClass().getClassLoader().getResource("day.seven/test-input-3-valid-ssl").getFile()).getPath();
 
         int analyze = classUnderTests.analyze(path);
@@ -39,7 +39,7 @@ public class SslTest {
     }
 
     @Test
-    public void testWhenValueNotFound() throws Exception {
+    public void testNoCorrespondingValueInSquareAndAfterSquareBrackets() throws Exception {
         String path = new File(getClass().getClassLoader().getResource("day.seven/test-input-4-invalid-ssl").getFile()).getPath();
 
         int analyze = classUnderTests.analyze(path);
