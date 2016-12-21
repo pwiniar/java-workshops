@@ -11,7 +11,6 @@ public class FileDecompressor {
         return lines.stream().map(s -> decompress(s, partTwo)).reduce(0L, Long::sum);
     }
 
-
     private static long decompress(String lines, boolean partTwo) {
         long cnt = 0;
 
