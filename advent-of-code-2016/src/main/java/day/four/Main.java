@@ -15,9 +15,6 @@ public class Main {
 
         System.out.println(String.format("Room name %s, sectorId %s, checksum %s", roomName, sectorID, checksum));
 
-
-
-
     }
 
 }
