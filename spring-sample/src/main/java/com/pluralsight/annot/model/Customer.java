@@ -1,4 +1,4 @@
-package com.pluralsight.annot.spring.model;
+package com.pluralsight.annot.model;
 
 /**
  * Created by Pawel on 2016-11-22.

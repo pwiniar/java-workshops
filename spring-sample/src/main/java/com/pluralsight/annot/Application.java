@@ -1,6 +1,8 @@
-package com.pluralsight.annot.spring;
+package com.pluralsight.annot;
 
-import com.pluralsight.spring.framework.xml.service.CustomerService;
+import com.pluralsight.annot.model.Customer;
+import com.pluralsight.annot.service.CustomerService;
+import com.pluralsight.annot.service.HardcodedCustomerService;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -9,16 +11,20 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Application {
 
+    private static ApplicationContext applicationContext;
+
     public static void main(String[] args) {
 
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("annotapplicationContext.xml");
+        applicationContext = new ClassPathXmlApplicationContext("annotapplicationContext.xml");
+        CustomerService customerService = applicationContext.getBean("customerService", CustomerService.class);
 
-        CustomerService service = applicationContext.getBean("customerService", CustomerService.class);
+        System.out.println("Application Name=" + applicationContext.getApplicationName());
+        System.out.println("Display Name="+ applicationContext.getDisplayName());
 
-        printResult(service);
+        print(customerService);
     }
 
-    private static void printResult(CustomerService service) {
+    private static void print(CustomerService service) {
         service.findAll().stream()
                 .map(s -> {
                     //map for transformation purposes
@@ -29,7 +35,7 @@ public class Application {
                     return s;
                 })
                 .forEach(s -> {
-                    System.out.format("Hi Customer %s %s\n",
+                    System.out.format("Hi Customer %s %s",
                             s.getFirstName(), s.getLastName());
                 });
     }

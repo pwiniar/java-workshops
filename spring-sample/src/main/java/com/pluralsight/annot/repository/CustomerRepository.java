@@ -1,6 +1,6 @@
-package com.pluralsight.annot.spring.repository;
+package com.pluralsight.annot.repository;
 
-import com.pluralsight.spring.framework.xml.model.Customer;
+import com.pluralsight.annot.model.Customer;
 
 import java.util.List;
 
