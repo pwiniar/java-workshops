@@ -11,8 +11,8 @@ import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
-import static java.workshop.java.intermediate.almostlikefunctional.$ExitTest.Try.tryIt;
 import static org.assertj.core.api.Java6Assertions.assertThat;
+import static workshop.java.intermediate.almostlikefunctional.$ExitTest.Try.tryIt;
 
 
 /**
@@ -45,16 +45,16 @@ public class JavaScriptTest {
 
         Predicate<Movie> filter = predicate("filter");
 
-        List<Movie> filtered = ExampleMovies.allMovies().stream()
-                .map(Movie.MovieBuilder::build)
-                .filter(filter)
-                .collect(Collectors.toList());
+//        List<Movie> filtered = ExampleMovies.allMovies().stream()
+//                .map(Movie.MovieBuilder::build)
+//                .filter(filter)
+//                .collect(Collectors.toList());
 
-        assertThat(filtered)
-                .extracting(Movie::getTitle)
-                .doesNotContain("The Inglorious Bastards")
-                .contains("The Wizard of Oz")
-                .hasSize(2)
-        ;
+//        assertThat(filtered)
+//                .extracting(Movie::getTitle)
+//                .doesNotContain("The Inglorious Bastards")
+//                .contains("The Wizard of Oz")
+//                .hasSize(2)
+//        ;
     }
 }
