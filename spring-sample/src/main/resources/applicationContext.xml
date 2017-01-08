@@ -22,6 +22,7 @@
     <!--</bean>-->
 
     <bean name="customerServiceAutowire1"
-          class="com.pluralsight.spring.framework.xml.service.HardcodedCustomerService" autowire="constructor">
+          class="com.pluralsight.spring.framework.xml.service.HardcodedCustomerService">
+        <constructor-arg index="0" ref="customerRepository"></constructor-arg>
     </bean>
 </beans>

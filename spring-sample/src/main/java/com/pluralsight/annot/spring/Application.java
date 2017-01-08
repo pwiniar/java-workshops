@@ -1,7 +1,8 @@
-package com.pluralsight.plain.java;
+package com.pluralsight.annot.spring;
 
-import com.pluralsight.plain.java.service.CustomerService;
-import com.pluralsight.plain.java.service.HardcodedCustomerService;
+import com.pluralsight.spring.framework.xml.service.CustomerService;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * Created by Pawel on 2016-11-22.
@@ -10,8 +11,14 @@ public class Application {
 
     public static void main(String[] args) {
 
-        CustomerService service = new HardcodedCustomerService();
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("annotapplicationContext.xml");
 
+        CustomerService service = applicationContext.getBean("customerService", CustomerService.class);
+
+        printResult(service);
+    }
+
+    private static void printResult(CustomerService service) {
         service.findAll().stream()
                 .map(s -> {
                     //map for transformation purposes
@@ -22,9 +29,8 @@ public class Application {
                     return s;
                 })
                 .forEach(s -> {
-                    System.out.format("Hi Customer %s %s",
+                    System.out.format("Hi Customer %s %s\n",
                             s.getFirstName(), s.getLastName());
                 });
     }
-
 }
