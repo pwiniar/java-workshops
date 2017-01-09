@@ -16,6 +16,8 @@
         <module>car-intersection-manager</module>
         <module>currency-calculator</module>
         <module>advent-of-code-2016</module>
+        <module>design-patterns</module>
+        <module>router</module>
     </modules>
 
     <dependencies>
