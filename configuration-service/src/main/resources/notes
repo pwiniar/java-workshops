@@ -1,0 +1,12 @@
+CREATE TABLE USERS (
+
+  firstname varchar(100),
+  lastname varchar(100),
+
+
+);
+
+create table USERS (ID number(100) GENERATED AS IDENTITY NOT NULL, FIRST_NAME varchar(100), LAST_NAME varchar(100), PROFESSION varchar(100), TIMESTAMP timestamp default sysdate, PRIMARY KEY (ID));
+
+
+insert into USERS (FIRST_NAME,LAST_NAME,PROFESSION) values ('Pawel','Winiarski','IT');

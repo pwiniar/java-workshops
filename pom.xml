@@ -18,6 +18,7 @@
         <module>advent-of-code-2016</module>
         <module>design-patterns</module>
         <module>router</module>
+        <module>configuration-service</module>
     </modules>
 
     <dependencies>
