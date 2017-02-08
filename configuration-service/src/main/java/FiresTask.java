@@ -1,3 +1,5 @@
+import tools.OperationSupport;
+
 import java.sql.Connection;
 import java.util.TimerTask;
 
@@ -25,7 +27,7 @@ public class FiresTask extends TimerTask {
         if (databaseConnection == null) {
             databaseConnection = databaseConnectionFactory.getDatabaseConnection(url, username, password, driver);
         } else {
-            OperationSupport.connection.connected();
+            OperationSupport.connected();
         }
     }
 }

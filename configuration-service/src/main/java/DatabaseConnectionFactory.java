@@ -1,3 +1,5 @@
+import tools.OperationSupport;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -5,19 +7,19 @@ import java.sql.SQLException;
 /**
  * Created by Pawel on 2017-01-23.
  */
-public class DatabaseConnectionFactory implements OperationSupport.connection{
+public class DatabaseConnectionFactory{
 
     public Connection getDatabaseConnection(String url, String userName, String password, String driver) {
-        OperationSupport.connection.connectionTesting();
+        OperationSupport.connectionTesting();
         Connection connection = null;
         try {
             Class.forName(driver);
-            OperationSupport.connection.driverRegistred(driver);
+            OperationSupport.driverRegistred(driver);
             connection = DriverManager.getConnection(url, userName, password);
         } catch (ClassNotFoundException e) {
-            OperationSupport.connection.whereIsYourDriver(driver, e);
+            OperationSupport.whereIsYourDriver(driver, e);
         } catch (SQLException e) {
-            OperationSupport.connection.connectionNotEstablished(e);
+            OperationSupport.connectionNotEstablished(e);
         }
 
         return connection;

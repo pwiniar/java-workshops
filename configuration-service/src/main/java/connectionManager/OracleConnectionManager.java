@@ -1,10 +1,13 @@
 package connectionManager;
 
 import properties.loader.PropertiesManager;
+import tools.OperationSupport;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.Properties;
 
 /**
@@ -13,6 +16,8 @@ import java.util.Properties;
 public class OracleConnectionManager implements DbManager {
 
     private final PropertiesManager propertiesManager;
+    private final Properties connectionProps = new Properties();
+    List<String> exceptions = new LinkedList<>();
 
     public OracleConnectionManager(PropertiesManager propertiesManager) {
         this.propertiesManager = propertiesManager;
@@ -28,32 +33,38 @@ public class OracleConnectionManager implements DbManager {
     }
 
     @Override
-    public Connection getConnection() throws SQLException {
-        Connection conn;
-        Properties connectionProps = new Properties();
+    public Connection getConnection() {
+        Connection conn = null;
         connectionProps.put("user", propertiesManager.getOracleUserName());
         connectionProps.put("password", propertiesManager.getOraclePassword());
 
-        switch (propertiesManager.getOracleDbms()) {
-            case "mysql":
-                conn = DriverManager.getConnection(
-                        "jdbc:" + propertiesManager.getOracleDbms() + "://" +
-                                propertiesManager.getOracleServerName() +
-                                ":" + propertiesManager.getOraclePort() + "/",
-                        connectionProps);
-                break;
-            case "derby":
-                conn = DriverManager.getConnection(
-                        "jdbc:" + propertiesManager.getOracleDbms() + ":" +
-                                propertiesManager.getOracleBbName() +
-                                ";create=true",
-                        connectionProps);
-                break;
-            default:
-                conn = DriverManager.getConnection(propertiesManager.getOracleUrl(), connectionProps);
-                break;
+        try {
+            switch (propertiesManager.getOracleDbms()) {
+                case "mysql":
+                    conn = DriverManager.getConnection(
+                            "jdbc:" + propertiesManager.getOracleDbms() + "://" +
+                                    propertiesManager.getOracleServerName() +
+                                    ":" + propertiesManager.getOraclePort() + "/",
+                            connectionProps);
+                    break;
+                case "derby":
+                    conn = DriverManager.getConnection(
+                            "jdbc:" + propertiesManager.getOracleDbms() + ":" +
+                                    propertiesManager.getOracleBbName() +
+                                    ";create=true",
+                            connectionProps);
+                    break;
+                default:
+                    conn = DriverManager.getConnection(propertiesManager.getOracleUrl(), connectionProps);
+                    break;
+            }
+
+        } catch (SQLException e) {
+            if (!exceptions.contains(e.getMessage())) {
+                exceptions.add(e.getMessage());
+                OperationSupport.somethingHappend(e.getMessage());
+            }
         }
-        System.out.println("Connected to database");
         return conn;
     }
 }

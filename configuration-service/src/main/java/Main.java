@@ -1,6 +1,8 @@
 import connectionManager.OracleConnectionManager;
 import properties.loader.PropertiesManager;
+import tools.OperationSupport;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
@@ -12,19 +14,29 @@ public class Main {
 
         PropertiesManager propertiesManager = new PropertiesManager();
         OracleConnectionManager oracleConnectionManager = new OracleConnectionManager(propertiesManager);
-        oracleConnectionManager.getConnection();
+        Connection connection = null;
+        boolean testFlat = true;
 
+        while (testFlat) {
+            connection = connectionEstablisher(oracleConnectionManager, connection);
 
-//        Timer timer = new Timer();
-//        FiresTask task = new FiresTask(URL, USERNAME, PASSWORD, DRIVER);
-//        timer.schedule(task, 0, 10000);
+            while (connection.isValid(5)) {
 
-//        Connection databaseConnection = databaseConnectionFactory.getDatabaseConnection(URL, USERNAME, PASSWORD, DRIVER);
-//        Queries queries = new Queries(databaseConnection);
-//
-//        queries.viewTable(databaseConnection);
+            }
+            connection = null;
+            connection = connectionEstablisher(oracleConnectionManager, connection);
+        }
 
 
     }
 
+    private static Connection connectionEstablisher(OracleConnectionManager oracleConnectionManager, Connection connection) {
+        while (connection == null) {
+            connection = oracleConnectionManager.getConnection();
+            if (connection != null) {
+                OperationSupport.connected();
+            }
+        }
+        return connection;
+    }
 }
