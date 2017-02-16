@@ -13,11 +13,7 @@
         <module>java-beginner</module>
         <module>java-intermediate</module>
         <module>spring-sample</module>
-        <module>car-intersection-manager</module>
-        <module>currency-calculator</module>
         <module>advent-of-code-2016</module>
-        <module>design-patterns</module>
-        <module>router</module>
         <module>configuration-service</module>
         <module>freecoding</module>
     </modules>
