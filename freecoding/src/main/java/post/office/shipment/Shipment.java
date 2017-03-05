@@ -20,6 +20,4 @@ public class Shipment {
     public String getSender() {
         return sender;
     }
-
-
 }

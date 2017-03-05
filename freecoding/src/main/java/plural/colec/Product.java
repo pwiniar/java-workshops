@@ -9,7 +9,7 @@ import java.util.Objects;
 
 public class Product {
 
-//        public static Comparator<Product> BY_WEIGHT = Comparator.comparing(Product::getWeight);
+    //        public static Comparator<Product> BY_WEIGHT = Comparator.comparing(Product::getWeight);
     public static Comparator<Product> BY_WEIGHT = new Comparator<Product>() {
         @Override
         public int compare(Product o1, Product o2) {
@@ -17,8 +17,17 @@ public class Product {
         }
     };
 
+    public static Comparator<Product> BY_NAME = Comparator.comparing(Product::getProductName);
+
     private final String productName;
     private final int weight;
+    private int id;
+
+    public Product(String productName, int weight, int id) {
+        this.productName = productName;
+        this.weight = weight;
+        this.id = id;
+    }
 
     public Product(String productName, int weight) {
         this.productName = productName;
@@ -31,6 +40,10 @@ public class Product {
 
     public int getWeight() {
         return weight;
+    }
+
+    public int getId() {
+        return id;
     }
 
     @Override

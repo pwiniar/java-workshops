@@ -8,4 +8,5 @@ public class Letter extends Shipment {
     public Letter(int weight, String sender) {
         super(weight, sender);
     }
+
 }

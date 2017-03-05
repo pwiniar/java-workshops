@@ -1,5 +1,7 @@
 package post.office.provider;
 
+import post.office.shipment.Letter;
+import post.office.shipment.Package;
 import post.office.shipment.Shipment;
 
 import java.util.ArrayList;
@@ -25,7 +27,8 @@ public class ShipmentProvider {
 
         for (int i = 0; i < random.nextInt((MAX_NUMBER_OF_SHIPMENTS - MIN_NUMBER_OF_SHIPMENTS) + 1) + MIN_NUMBER_OF_SHIPMENTS; i++) {
             int randomWeight = random.nextInt((30 - 1) + 1) + 1;
-            shipments.add(new Shipment(randomWeight, "Piekna " + i));
+
+            shipments.add((randomWeight > 15) ? new Package(randomWeight, "Piekna " + i) : new Letter(randomWeight, "Pużaka " + i));
         }
 
         return shipments;

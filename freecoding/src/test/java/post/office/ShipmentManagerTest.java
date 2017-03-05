@@ -15,7 +15,7 @@ import java.util.List;
 public class ShipmentManagerTest {
 
     @Test
-    public void name() throws Exception {
+    public void shipmentsAreCorrectlySorted() throws Exception {
         ShipmentProvider shipmentProvider = new ShipmentProvider("provider");
         List<Shipment> shipments = shipmentProvider.deliverShipment();
 
