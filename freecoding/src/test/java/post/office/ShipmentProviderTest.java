@@ -2,7 +2,7 @@ package post.office;
 
 import org.junit.Test;
 import org.mockito.Mockito;
-import post.office.provider.ShipmentProvider;
+import post.office.provider.PolishPost;
 import post.office.shipment.Shipment;
 
 import java.util.Collections;
@@ -18,7 +18,7 @@ public class ShipmentProviderTest {
     @Test
     public void numberOfShipmentIsNotLessThen50() throws Exception {
 
-        ShipmentProvider provider = new ShipmentProvider("FeedEx");
+        PolishPost provider = new PolishPost("FeedEx");
         List<Shipment> shipments = provider.deliverShipment();
 
         assertThat(shipments.size()).isGreaterThanOrEqualTo(50);
@@ -27,7 +27,7 @@ public class ShipmentProviderTest {
     @Test(expected = AssertionError.class)
     public void numberOfShipmentsLessThen50() throws Exception {
 
-        ShipmentProvider shipmentProviderMock = Mockito.mock(ShipmentProvider.class);
+        PolishPost shipmentProviderMock = Mockito.mock(PolishPost.class);
         Mockito.when(shipmentProviderMock.deliverShipment()).thenReturn(Collections.emptyList());
 
         List<Shipment> shipments = shipmentProviderMock.deliverShipment();

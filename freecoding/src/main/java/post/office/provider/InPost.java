@@ -7,8 +7,10 @@ import java.util.List;
 /**
  * Created by Pawel on 2017-03-06.
  */
-public interface ShipmentProvider {
+public class InPost implements ShipmentProvider {
 
-    List<Shipment> deliverShipment();
-
+    @Override
+    public List<Shipment> deliverShipment() {
+        return null;
+    }
 }
