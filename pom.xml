@@ -15,6 +15,7 @@
         <module>advent-of-code-2016</module>
         <module>configuration-service</module>
         <module>freecoding</module>
+        <module>purejava</module>
     </modules>
 
     <dependencies>
