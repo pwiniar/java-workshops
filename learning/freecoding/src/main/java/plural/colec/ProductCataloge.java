@@ -1,6 +1,8 @@
 package plural.colec;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 /**
  * Created by winiar on 17/02/2017.

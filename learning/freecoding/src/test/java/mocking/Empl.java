@@ -1,9 +1,5 @@
 package mocking;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
-
 /**
  * Created by Pawel on 2017-02-07.
  */

@@ -16,6 +16,7 @@
         <module>configuration-service</module>
         <module>freecoding</module>
         <module>purejava</module>
+        <module>learning</module>
     </modules>
 
     <dependencies>

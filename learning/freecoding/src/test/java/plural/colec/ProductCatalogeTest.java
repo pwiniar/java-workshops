@@ -4,7 +4,8 @@ import org.hamcrest.Matchers;
 import org.junit.Assert;
 import org.junit.Test;
 
-import static plural.colec.ProductFixtures.*;
+import static plural.colec.ProductFixtures.door;
+import static plural.colec.ProductFixtures.floorPanel;
 
 /**
  * Created by winiar on 17/02/2017.
