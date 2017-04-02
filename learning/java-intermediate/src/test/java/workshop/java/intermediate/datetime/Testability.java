@@ -3,7 +3,10 @@ package workshop.java.intermediate.datetime;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
-import java.time.*;
+import java.time.Clock;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
 
 /**
  * Created by michal on 09.10.2016.

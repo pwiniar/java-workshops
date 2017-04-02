@@ -51,14 +51,11 @@ public class ComposeMethod {
     public static void main(String[] args) {
         ComposeMethod cm = new ComposeMethod();
 
-        double start = System.nanoTime();
-        for (int i = 0; i < 90000; i++) {
-            cm.add("ok" + i);
-        }
-        double stop = (System.nanoTime() - start) / 1000000000;
-        BigDecimal finalValue = new BigDecimal(stop);
-        System.err.println("OLD IMPLEMENTATION TIME: " + finalValue.setScale(4, BigDecimal.ROUND_HALF_UP) + "s TIMES GROW : " + cm.iterator);
+        newOne(cm);
+        oldOne(cm);
+    }
 
+    public static void newOne(ComposeMethod cm) {
         double startn = System.nanoTime();
         for (int i = 0; i < 90000; i++) {
             cm.addRefactored("ok" + i);
@@ -66,5 +63,15 @@ public class ComposeMethod {
         double stopn = (System.nanoTime() - startn) / 1000000000;
         BigDecimal finalValuen = new BigDecimal(stopn);
         System.err.println("NEW IMPLEMENTATION TIME: " + finalValuen.setScale(4, BigDecimal.ROUND_HALF_UP) + "s TIMES GROW : " + cm.iterator2);
+    }
+
+    public static void oldOne(ComposeMethod cm) {
+        double start = System.nanoTime();
+        for (int i = 0; i < 90000; i++) {
+            cm.add("ok" + i);
+        }
+        double stop = (System.nanoTime() - start) / 1000000000;
+        BigDecimal finalValue = new BigDecimal(stop);
+        System.err.println("OLD IMPLEMENTATION TIME: " + finalValue.setScale(4, BigDecimal.ROUND_HALF_UP) + "s TIMES GROW : " + cm.iterator);
     }
 }

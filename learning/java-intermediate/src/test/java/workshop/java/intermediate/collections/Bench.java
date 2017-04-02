@@ -2,7 +2,10 @@ package workshop.java.intermediate.collections;
 
 import org.openjdk.jmh.annotations.Benchmark;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Random;
 import java.util.stream.Collectors;
 
 /**

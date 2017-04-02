@@ -1,7 +1,6 @@
 package workshop.java.intermediate.boilerplatefree;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.Value;
 
 import java.util.Optional;

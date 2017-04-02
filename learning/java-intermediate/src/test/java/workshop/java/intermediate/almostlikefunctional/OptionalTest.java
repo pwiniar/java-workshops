@@ -4,12 +4,9 @@ import org.junit.Test;
 
 import java.util.NoSuchElementException;
 import java.util.Optional;
-import java.util.function.Consumer;
-import java.util.function.Function;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 /**
  * Created by michal on 22.10.2016.

@@ -4,7 +4,10 @@ import org.junit.Test;
 
 import java.time.DayOfWeek;
 import java.time.Year;
-import java.time.temporal.*;
+import java.time.temporal.ChronoField;
+import java.time.temporal.ChronoUnit;
+import java.time.temporal.TemporalAdjuster;
+import java.time.temporal.TemporalAdjusters;
 
 /**
  * Created by michal on 09.10.2016.

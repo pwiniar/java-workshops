@@ -3,7 +3,10 @@ package workshop.java.intermediate.almostlikefunctional;
 import org.junit.Test;
 
 import java.time.LocalDate;
-import java.util.*;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.function.*;
 
 import static org.assertj.core.api.Assertions.assertThat;

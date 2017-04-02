@@ -3,7 +3,6 @@ package workshop.java.intermediate.almostlikefunctional;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
-import java.io.FilenameFilter;
 import java.util.Arrays;
 import java.util.Comparator;
 

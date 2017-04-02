@@ -4,8 +4,6 @@ import org.junit.Test;
 
 import java.util.*;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 /**
  * Created by michal on 21.10.2016.
  */

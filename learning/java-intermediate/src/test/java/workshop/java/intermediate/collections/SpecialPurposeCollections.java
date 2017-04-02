@@ -7,9 +7,7 @@ import workshop.java.intermediate.boilerplatefree.Movie;
 import java.util.*;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static workshop.java.intermediate.boilerplatefree.Movie.Genre.Action;
-import static workshop.java.intermediate.boilerplatefree.Movie.Genre.Adventure;
-import static workshop.java.intermediate.boilerplatefree.Movie.Genre.Thriller;
+import static workshop.java.intermediate.boilerplatefree.Movie.Genre.*;
 import static workshop.java.intermediate.collectionsprocessing.BasicsOperations.genres;
 
 /**

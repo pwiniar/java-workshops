@@ -8,7 +8,8 @@ import java.time.Year;
 import java.util.function.Function;
 import java.util.function.Supplier;
 
-import static org.assertj.core.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.within;
 
 /**
  * Created by michal on 19.10.2016.

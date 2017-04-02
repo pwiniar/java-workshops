@@ -4,19 +4,19 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.githube.michal-michlauk</groupId>
+    <groupId>com.githube.pawel-winiarski</groupId>
     <artifactId>java-workshop</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>java-beginner</module>
-        <module>java-intermediate</module>
-        <module>advent-of-code-2016</module>
-        <module>configuration-service</module>
-        <module>freecoding</module>
-        <module>purejava</module>
-        <module>learning</module>
+        <module>learning/java-beginner</module>
+        <module>learning/java-intermediate</module>
+        <module>advent-of-code/advent-of-code-2016</module>
+        <module>learning/configuration-service</module>
+        <module>learning/freecoding</module>
+        <module>learning/purejava</module>
+        <module>learning/refactoring-to-patterns</module>
     </modules>
 
     <dependencies>

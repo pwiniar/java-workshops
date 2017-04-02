@@ -144,12 +144,12 @@ public class StreamPitfallsTest {
 
     @Test
     public void filesWalkIssue() throws Exception {
-        Files.walk(Paths.get("."))
-                .filter(p -> !p.toFile().getName().startsWith("."))
+        Files.walk(Paths.get(""))
+                .filter(p -> !p.toFile().getName().startsWith(""))
                 .forEach(System.out::println);
 
-        Files.walk(Paths.get("."))
-                .filter(p -> !p.toString().contains(File.separator + "."))
+        Files.walk(Paths.get(""))
+                .filter(p -> !p.toString().contains(File.separator + ""))
                 .forEach(System.out::println);
 
     }
