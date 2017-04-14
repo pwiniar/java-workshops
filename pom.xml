@@ -18,6 +18,8 @@
         <module>learning/purejava</module>
         <module>learning/refactoring-to-patterns</module>
         <module>learning/the-java-tutorials-interfaces</module>
+        <module>learning/spring</module>
+
     </modules>
 
     <dependencies>
