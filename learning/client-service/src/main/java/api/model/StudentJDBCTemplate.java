@@ -10,19 +10,17 @@ import java.util.List;
  */
 public class StudentJDBCTemplate implements StudentDAO {
 
-    private DataSource dataSource;
     private JdbcTemplate jdbcTemplateObject;
 
     @Override
     public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
         this.jdbcTemplateObject = new JdbcTemplate(dataSource);
     }
 
     @Override
     public void create(String name, Integer age) {
         String SQL = "insert into Student (name, age) values (?, ?)";
-        jdbcTemplateObject.update(SQL, name, age);
+        jdbcTemplateObject.update(SQL, new Object[]{name, age});
         System.out.println("Created Record Name = " + name + " Age = " + age);
     }
 
