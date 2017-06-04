@@ -1,4 +1,5 @@
-Feature: Cash Withdrawal
+@server
+Feature: Cash Withdrawal cucumber-->ui-->domain model
 
 """
   Some inconsistent language is creeping in; the step talks
@@ -15,8 +16,22 @@ Feature: Cash Withdrawal
   pattern does
 """
 
-  Scenario: Successful withdrawal from an account in credit
-    Given I have deposited $100.00 in my account
-    When I request $20.00
-    Then $20.00 should be dispensed
+  Background:
+    Given server server teller
 
+  Scenario Outline: Successful withdrawal from an account in credit
+    Given Account has been credited with <input>
+    When I withdraw $<withdraw>
+    Then $<withdraw> should be dispensed
+    And The balance of my account should be <result>
+
+    Examples:
+      | input   | withdraw | result |
+      | $100.00 | 20.00    | $80.00 |
+      | $200.00 | 200.00    | $0.00 |
+
+  Scenario: Successful withdrawal from an account in credit
+    Given Account has been credited with $100.00
+    When I withdraw $20.00
+    Then $20.00 should be dispensed
+    And The balance of my account should be $80.00

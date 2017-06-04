@@ -43,7 +43,7 @@ public class MyParser extends DefaultHandler {
     }
 
     protected void showAccounts() {
-        System.out.println("No of accounts in bank '" + accList.size()  + "'.");
+        System.out.println("No of accounts in nicebank '" + accList.size()  + "'.");
         Iterator<Account> iterator = accList.iterator();
 
         while (iterator.hasNext()) {
