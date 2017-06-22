@@ -13,7 +13,7 @@ public class AutomatedTeller implements Teller {
         this.cashSlot = cashSlot;
     }
 
-    public void withdrawFrom(int dollars, Account account){
+    public void withdrawFrom(Account account, int dollars){
         account.debit(dollars);
         cashSlot.dispense(dollars);
     }

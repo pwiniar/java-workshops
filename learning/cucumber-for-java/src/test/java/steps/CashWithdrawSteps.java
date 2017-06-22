@@ -34,7 +34,7 @@ public class CashWithdrawSteps {
 
     @When("^I withdraw \\$(.+)$")
     public void iWithdraw$(int dollars) throws Throwable {
-        teller.withdrawFrom(dollars, account);
+        teller.withdrawFrom(account, dollars);
     }
 
     @Then("^\\$(.+) should be dispensed$")
@@ -68,7 +68,6 @@ public class CashWithdrawSteps {
                 break;
             case "server":
                 this.teller = helper.getAtmUserInterfaceTeller();
-                System.setProperty("webdriver.chrome.driver", "C:\\Users\\Winiar\\Documents\\pawel\\workspace\\chromedriver_win32");
                 break;
         }
 

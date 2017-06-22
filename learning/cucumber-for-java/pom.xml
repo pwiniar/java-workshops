@@ -52,7 +52,6 @@
             <groupId>picocontainer</groupId>
             <artifactId>picocontainer</artifactId>
             <version>${picocontainer.version}</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>

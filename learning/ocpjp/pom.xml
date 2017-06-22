@@ -2,25 +2,14 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <parent>
-        <artifactId>java-workshop</artifactId>
+        <artifactId>learning</artifactId>
         <groupId>com.githube.pawel-winiarski</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>learning</artifactId>
-
-    <packaging>pom</packaging>
-    <modules>
-        <module>gob-guieded-by-tests</module>
-        <module>cucumber-for-java</module>
-        <module>ocpjp</module>
-        <module>jetty-web</module>
-    </modules>
-
-
+    <artifactId>ocpjp</artifactId>
     <build>
         <plugins>
             <plugin>
@@ -33,4 +22,6 @@
             </plugin>
         </plugins>
     </build>
+
+
 </project>

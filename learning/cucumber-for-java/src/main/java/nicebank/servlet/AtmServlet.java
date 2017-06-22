@@ -11,20 +11,29 @@ import java.io.IOException;
  */
 public class AtmServlet extends HttpServlet {
 
-    private static final String PAGE_HTML =
-            "<html>" +
-               "<head>" +
-                    "<title>Nice Bank ATM</title>" +
-               "</head>" +
-                    "<body>" +
-                    "  <h1>Welcome to our nice bank!</h1>" +
-                    "</body>" +
-            "</html>";
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        response.setContentType("text/html");
+        response.setStatus(HttpServletResponse.SC_OK);
+        String message = "Hello World";
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        resp.setContentType("text/html");
-        resp.setStatus(HttpServletResponse.SC_OK);
-        resp.getWriter().println(PAGE_HTML);
+        String s = message;
+        response.getWriter().println("<!DOCTYPE html>\n" +
+                "<html lang=\"en\">\n" +
+                "<head>\n" +
+                "    <title>SO question 2370960</title>\n" +
+                "</head>\n" +
+                "<body>\n" +
+                "<p>Message: " + s + "</p>\n" +
+                "</body>\n" +
+                "</html>");
+
+//        response.getWriter().println(
+//                "<html><head><title>ATM</title></head>" +
+//                        "<body><form action=\"/withdraw\" method=\"post\">" +
+//                        "<label for=\"amount\">Amount</label>" +
+//                        "<input type=\"text\" id=\"amount\" name=\"amount\">" +
+//                        "<button type=\"submit\" id=\"withdraw\">Withdraw</button>" +
+//                        "</form></body></html>");
     }
 }
