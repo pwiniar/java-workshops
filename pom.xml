@@ -15,12 +15,9 @@
         <module>advent-of-code/advent-of-code-2016</module>
         <module>learning/configuration-service</module>
         <module>learning/freecoding</module>
-        <module>learning/purejava</module>
         <module>learning/refactoring-to-patterns</module>
         <module>learning/the-java-tutorials-interfaces</module>
-        <module>learning/ftp-mongo</module>
         <module>learning/client-service</module>
-        <module>learning/gob-guieded-by-tests</module>
     </modules>
 
     <dependencies>
