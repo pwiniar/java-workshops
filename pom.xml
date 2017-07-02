@@ -11,17 +11,7 @@
 
     <modules>
         <module>advent-of-code/advent-of-code-2016</module>
-        <module>learning/client-service</module>
-        <module>learning/configuration-service</module>
-        <module>learning/cucumber-for-java</module>
-        <module>learning/freecoding</module>
-        <module>learning/java-beginner</module>
-        <module>learning/java-intermediate</module>
-        <module>learning/jetty-web</module>
-        <module>learning/ocpjp</module>
-        <module>learning/refactoring-to-patterns</module>
-        <module>learning/the-java-tutorials-interfaces</module>
-        <module>learning/thyme-leaf</module>
+        <module>learning</module>
     </modules>
 
     <build>
@@ -36,7 +26,7 @@
             </plugin>
         </plugins>
     </build>
-    
+
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
