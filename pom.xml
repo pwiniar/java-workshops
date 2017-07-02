@@ -10,16 +10,33 @@
     <packaging>pom</packaging>
 
     <modules>
+        <module>advent-of-code/advent-of-code-2016</module>
+        <module>learning/client-service</module>
+        <module>learning/configuration-service</module>
+        <module>learning/cucumber-for-java</module>
+        <module>learning/freecoding</module>
         <module>learning/java-beginner</module>
         <module>learning/java-intermediate</module>
-        <module>advent-of-code/advent-of-code-2016</module>
-        <module>learning/configuration-service</module>
-        <module>learning/freecoding</module>
+        <module>learning/jetty-web</module>
+        <module>learning/ocpjp</module>
         <module>learning/refactoring-to-patterns</module>
         <module>learning/the-java-tutorials-interfaces</module>
-        <module>learning/client-service</module>
+        <module>learning/thyme-leaf</module>
     </modules>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

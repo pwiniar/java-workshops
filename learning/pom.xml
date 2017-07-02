@@ -14,10 +14,10 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>gob-guieded-by-tests</module>
         <module>cucumber-for-java</module>
         <module>ocpjp</module>
         <module>jetty-web</module>
+        <module>thyme-leaf</module>
     </modules>
 
 
