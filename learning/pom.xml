@@ -23,7 +23,7 @@
         <module>jetty-web</module>
         <module>ocpjp</module>
         <module>refactoring-to-patterns</module>
-        <module>the-java-tutorials-interfaces</module>
+        <module>the-java-tutorials</module>
         <module>thyme-leaf</module>
     </modules>
 

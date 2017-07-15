@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Fresh Sweet Basil",
+    "availability": true,
+    "price": 4.99
+  },
+  {
+    "id": 2,
+    "name": "Italian Tomato",
+    "availability": false,
+    "price": 1.25
+  },
+  {
+    "id": 3,
+    "name": "Yellow Bell Pepper",
+    "availability": true,
+    "price": 2.50
+  },
+  {
+    "id": 4,
+    "name": "Old Cheddar",
+    "availability": true,
+    "price": 18.75
+  },
+  {
+    "id": 5,
+    "name": "Extra Virgin Coconut Oil",
+    "availability": true,
+    "price": 6.34
+  }
+]
