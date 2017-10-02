@@ -27,6 +27,7 @@ public class MarketMaker implements Runnable {
     private final String description;
     private final ITopic<StockPrice> topic;
     private volatile boolean running;
+    private static HazelcastInstance hzInstance = Hazelcast.newHazelcastInstance();;
 
     public MarketMaker(String topicName, String stockCode, String description) {
         this.stockCode = stockCode;
@@ -37,7 +38,6 @@ public class MarketMaker implements Runnable {
 
     @VisibleForTesting
     private ITopic<StockPrice> createTopic(String topicName) {
-        HazelcastInstance hzInstance = Hazelcast.newHazelcastInstance();
         return hzInstance.getTopic(topicName);
     }
 
