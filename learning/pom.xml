@@ -14,16 +14,11 @@
 
     <packaging>pom</packaging>
     <modules>
-        <module>client-service</module>
         <module>cucumber-for-java</module>
         <module>freecoding</module>
         <module>java-beginner</module>
         <module>java-intermediate</module>
-        <module>jetty-web</module>
-        <module>ocpjp</module>
-        <module>refactoring-to-patterns</module>
-        <module>the-java-tutorials</module>
-    </modules>
+    </modules>Ń
 
 
     <build>
